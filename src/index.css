@@ -1,70 +1,69 @@
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  border: none;
+  outline: none;
+  margin-top: 40px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  width: fit-content;
+  padding: 16px 24px;
+  background: #f4f5f6;
+  border-radius: 90px;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  color: #3d3d3d;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title_content h2 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: 0.02em;
+  color: #d6d6d6;
+}
+
+.title_content h3 {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 64px;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive Styles 1124px */
+@media screen and (max-width: 1124px) {
+  .title_content h3 {
+    font-size: 44px;
   }
-  a:hover {
-    color: #747bff;
+}
+
+/* Responsive Styles 480px */
+@media screen and (max-width: 480px) {
+  .title_content h2 {
+    font-size: 18px;
+    line-height: 27px;
   }
-  button {
-    background-color: #f9f9f9;
+  .title_content h3 {
+    font-size: 26px;
+    line-height: 34px;
+    letter-spacing: 0.01em;
+  }
+  .title {
+    align-items: flex-start;
+  }
+  .title img {
+    width: 36px;
+    height: 36px;
   }
 }
