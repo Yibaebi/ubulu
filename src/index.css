@@ -37,6 +37,7 @@ button {
 .title {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
   align-items: center;
 }
 .title_content h2 {
@@ -63,6 +64,11 @@ button {
 @media screen and (max-width: 1124px) {
   .title_content h3 {
     font-size: 44px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .title_content h3 {
+    font-size: 39px;
   }
 }
 
