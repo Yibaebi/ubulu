@@ -32,6 +32,20 @@
   color: #d6d6d6;
 }
 
+/* Rotating Element */
+.rotate {
+  animation: rotation 20s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
 /* Hero Content */
 .hero_content {
   margin-top: 400px;
@@ -149,6 +163,7 @@
 .partner {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
 }
 .partner a {
@@ -162,7 +177,7 @@
   color: #fafafa;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.partner a img {
+.partner a .partner_icon {
   margin-left: 10px;
 }
 
@@ -171,28 +186,139 @@
   background: #111316;
 }
 
-/* Responsive Styles 1124px */
-@media screen and (max-width: 1124px) {
-  .about_content_section {
-    display: grid;
-    grid-template-columns: 50% 45%;
-  }
-  .about_content p {
-    font-size: 22px;
-  }
+.contact_content {
+  display: flex;
+  gap: 80px;
+  padding: 80px;
+  margin-top: 80px;
+  background: #23262f;
+  box-shadow: 0px 64px 64px -48px rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
+}
+.social,
+.email {
+  display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  width: fit-content;
+}
+.links {
+  margin-bottom: 16px;
+}
+.social p,
+.email p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #c4c4c4;
+  margin-bottom: 8px;
+}
+.email {
+  grid-column: 2;
+}
+.social {
+  grid-column: 1;
+}
+.social_links {
+  display: flex;
+  gap: 15px;
+}
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.contact_form textarea,
+.contact_form input {
+  border: none;
+  outline: none;
+  color: #d6d6d6;
+  background: #080808;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 16px;
+}
+.contact_form textarea {
+  height: 110px;
+  resize: none;
+  overflow: auto;
+}
+.contact_form textarea::placeholder,
+.contact_form input::placeholder {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #f4f5f6;
+}
+.contact_form button {
+  width: 100%;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #08080c;
+  margin-top: 0px;
+}
+.form_group {
+  display: flex;
+  flex-direction: column;
+}
+.form_group label {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: #f4f5f6;
+  margin-bottom: 12px;
+}
+.send_mail {
+  margin-right: 13px;
 }
 
-/* Responsive Styles 850px */
-@media screen and (max-width: 850px) {
+/* Responsive Styles 1124px */
+@media screen and (max-width: 1124px) {
   .hero {
     padding: 64px 60px 100px 60px;
+  }
+  .content h2 {
+    font-size: 54px;
   }
   .about_us_section,
   .services_section,
   .contact_section {
     padding: 80px 60px;
   }
+  .about_content_section {
+    display: grid;
+    grid-template-columns: 50% 45%;
+  }
+  .about_content {
+    height: 100%;
+  }
+  .about_content p {
+    font-size: 22px;
+  }
+  .contact_content {
+    padding: 40px;
+    gap: 40px;
+  }
+}
 
+/* Responsive Styles 850px */
+@media screen and (max-width: 850px) {
+  .content h2 {
+    font-size: 44px;
+  }
   .about_content p {
     font-size: 18px;
   }
@@ -236,9 +362,7 @@
     flex-direction: column;
     margin-top: 32px;
   }
-  .about_content {
-    height: 100%;
-  }
+
   .about_content p {
     font-size: 16px;
   }
@@ -246,7 +370,7 @@
     padding: 64px 24px;
   }
   .partners_content {
-    gap: 10px;
+    gap: 5px;
     align-items: center;
   }
   .partner {
@@ -260,8 +384,34 @@
     font-size: 16px;
     line-height: 21px;
   }
-  .partner a img {
+  .partner a .partner_icon {
     width: 13.33px;
     height: 13.33px;
+    margin-left: 5px;
+  }
+  .contact_content {
+    flex-wrap: wrap;
+    column-gap: 34.45px;
+    margin-top: 64px;
+    row-gap: 40px;
+    padding: 24px 20px;
+  }
+  .email {
+    order: 1;
+  }
+  .social {
+    order: 2;
+  }
+  .email p,
+  .social p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .iconlinks {
+    width: 20px;
+    height: 20px;
+  }
+  .contact_form {
+    order: 3;
   }
 }
