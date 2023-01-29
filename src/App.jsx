@@ -122,7 +122,6 @@ function App() {
               <label htmlFor="email">Email</label>
               <input type="email" id="email" placeholder="Enter your email address" />
             </div>
-
             <button>
               {' '}
               <SendMail className={styles.send_mail} /> Send message{' '}
