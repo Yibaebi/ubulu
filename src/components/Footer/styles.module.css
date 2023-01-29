@@ -1,0 +1,139 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 232px 45px 120px;
+  gap: 48px;
+}
+.socials path {
+  fill: #777e91;
+}
+.socials {
+  width: 16px;
+  height: 16px;
+}
+.logo {
+  min-width: 217px;
+}
+hr {
+  height: 1px;
+  background: #e6e8ec;
+  border: none;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.sec_one,
+.sec_two,
+.sec_three {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+nav {
+  display: flex;
+  gap: 40px;
+}
+nav a {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
+  color: #777e91;
+}
+
+.sec_two {
+  align-items: flex-end;
+  /* margin-bottom: 40px; */
+}
+.sec_three div {
+  display: flex;
+  gap: 28px;
+}
+.sec_three div p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #777e91;
+}
+.sec_three div a {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  color: #777e91;
+  text-decoration: none;
+}
+@media screen and (max-width: 1124px) {
+  .footer {
+    padding: 20px 60px 45px 60px;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 850px) {
+  .footer {
+    padding: 20px 120px 45px 120px;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  nav {
+    gap: 20px;
+  }
+  .sec_three div {
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    padding: 48px 24px;
+    gap: 24px;
+  }
+  nav {
+    gap: 20px;
+  }
+  nav a {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .logo {
+    align-self: flex-start;
+  }
+  .sec_one {
+    gap: 35px;
+    flex-direction: column;
+  }
+  .sec_three {
+    flex-direction: column-reverse;
+  }
+  .sec_three div {
+    gap: 15px;
+  }
+  .sec_three .copyright {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: row;
+  }
+  .privacy {
+    order: 1;
+  }
+  .terms {
+    order: 2;
+  }
+  .copy {
+    order: 3;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  nav {
+    gap: 15px;
+  }
+}

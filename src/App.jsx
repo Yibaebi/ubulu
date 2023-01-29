@@ -21,7 +21,7 @@ function App() {
   return (
     <div className={styles.App}>
       {/* Hero Section */}
-      <div className={styles.hero}>
+      <div className={styles.hero} id="home">
         <div className={styles.nav}>
           <h1>Navigation Bar</h1>
         </div>
@@ -39,7 +39,7 @@ function App() {
       </div>
 
       {/* About Us Section */}
-      <div className={styles.about_us_section}>
+      <div className={styles.about_us_section} id="about">
         <Title title="About Us" subtitle="An Innovation Management Group" />
         <div className={styles.about_content_section}>
           <div className={styles.about_content}>
@@ -58,7 +58,7 @@ function App() {
       </div>
 
       {/* Services Section */}
-      <div className={styles.services_section}>
+      <div className={styles.services_section} id="services">
         <Title title="Our Services" subtitle="Building Blocks for Innovation" />
         <ServicesSection />
       </div>
@@ -89,7 +89,7 @@ function App() {
       </div>
 
       {/* Contact Section */}
-      <div className={styles.contact_section}>
+      <div className={styles.contact_section} id="contact">
         <Title title="Let’s connect" subtitle="Contact us" />
         <div className={styles.contact_content}>
           <div className={styles.social}>
@@ -129,6 +129,10 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* Footer Section */}
+      <Footer />
+      <ScrollButton />
     </div>
   )
 }
