@@ -1,12 +1,13 @@
-import Button from "./components/Button";
-import Rotate from "./components/Rotate";
-import Title from "./components/Title";
-import Partner1 from "./assets/TechQuest.svg";
-import Partner2 from "./assets/TechCircle.svg";
-import Partner3 from "./assets/Caspania.svg";
-import ExternalLink from "./assets/ExternalLinkIcon.svg";
-import Bulb from "./assets/bulb.png";
-import styles from "./styles.module.css";
+import Button from './components/Button'
+import Rotate from './components/Rotate'
+import Title from './components/Title'
+import Partner1 from './assets/TechQuest.svg'
+import Partner2 from './assets/TechCircle.svg'
+import Partner3 from './assets/Caspania.svg'
+import ExternalLink from './assets/ExternalLinkIcon.svg'
+import Bulb from './assets/bulb.png'
+import styles from './styles.module.css'
+import { ServicesSection } from './components/ServicesSection'
 
 function App() {
   return (
@@ -35,13 +36,12 @@ function App() {
         <div className={styles.about_content_section}>
           <div className={styles.about_content}>
             <p>
-              Ubulu Africa is an innovation management group dedicated to
-              helping individuals and organizations use technology to achieve
-              the Sustainable Development Goals (SDGs).
+              Ubulu Africa is an innovation management group dedicated to helping individuals and organizations use
+              technology to achieve the Sustainable Development Goals (SDGs).
             </p>
             <p>
-              We are building a Centre of Excellence for end-to-end innovation
-              activities required to solve problems in Africa.
+              We are building a Centre of Excellence for end-to-end innovation activities required to solve problems in
+              Africa.
             </p>
           </div>
           <img src={Bulb} alt="Light Bulb" />
@@ -51,6 +51,7 @@ function App() {
       {/* Services Section */}
       <div className={styles.services_section}>
         <Title title="Our Services" subtitle="Building Blocks for Innovation" />
+        <ServicesSection />
       </div>
 
       {/* Partners Section */}
@@ -83,7 +84,7 @@ function App() {
         <Title title="Let’s connect" subtitle="Contact us" />
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

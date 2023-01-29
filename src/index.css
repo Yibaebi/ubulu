@@ -1,3 +1,17 @@
+:root {
+  --ulu-color-primary: #fafafa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans';
+}
+
 button {
   border: none;
   outline: none;
@@ -7,7 +21,6 @@ button {
   padding: 16px 24px;
   background: #f4f5f6;
   border-radius: 90px;
-  font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -21,7 +34,7 @@ button {
   align-items: center;
 }
 .title_content h2 {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -31,7 +44,6 @@ button {
 }
 
 .title_content h3 {
-  font-family: "DM Sans";
   font-style: normal;
   font-weight: 700;
   font-size: 54px;
