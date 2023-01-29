@@ -6,8 +6,9 @@ import {
   hubsAndSpacesImage,
   incubatorAndAcceleratorImage,
 } from '../../assets'
-
 import { EyeIcon } from '../../assets'
+
+import { useWindowSize } from '../../hooks'
 
 const ServicesSection = () => {
   const [serviceInDisplay, setServiceInDisplay] = useState({
@@ -62,6 +63,8 @@ const ServicesSection = () => {
     })
   }
 
+  const windowSize = useWindowSize()
+
   return (
     <section className={styles.container}>
       <div className={styles.services_wrapper}>
@@ -69,19 +72,21 @@ const ServicesSection = () => {
           <img src={serviceInDisplay.image} alt="name" />
         </section>
 
-        <ul className={styles.service_list}>
-          {servicesList.map((service, idx) => {
-            return (
-              <li className={styles.service_list__item} key={idx}>
-                <div className={styles.title}>
-                  <EyeIcon className={styles.eye_icon} onClick={() => updateServiceInDisplay(idx)} />
-                  <p>{service.title}</p>
-                </div>
-                <img src={service.image} alt={service.title} />
-              </li>
-            )
-          })}
-        </ul>
+        {windowSize.width > 850 && (
+          <ul className={styles.service_list}>
+            {servicesList.map((service, idx) => {
+              return (
+                <li className={styles.service_list__item} key={idx}>
+                  <div className={styles.title}>
+                    <EyeIcon className={styles.eye_icon} onClick={() => updateServiceInDisplay(idx)} />
+                    <p>{service.title}</p>
+                  </div>
+                  <img src={service.image} alt={service.title} />
+                </li>
+              )
+            })}
+          </ul>
+        )}
       </div>
       <article className={styles.service_info__content}>
         <h2>{serviceInDisplay.title}</h2>
@@ -89,6 +94,23 @@ const ServicesSection = () => {
           <p key={desc}>{desc}</p>
         ))}
       </article>
+
+      {windowSize.width <= 850 &&
+        servicesList.map((service, idx) => {
+          return (
+            <React.Fragment key={idx}>
+              <section className={styles.current_service}>
+                <img src={service.image} alt="name" />
+              </section>
+              <article className={styles.service_info__content}>
+                <h2>{service.title}</h2>
+                {service.description.map(desc => (
+                  <p key={desc}>{desc}</p>
+                ))}
+              </article>
+            </React.Fragment>
+          )
+        })}
     </section>
   )
 }

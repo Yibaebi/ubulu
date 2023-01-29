@@ -40,21 +40,23 @@ button {
   gap: 20px;
   align-items: center;
 }
+
 .title_content h2 {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
-  line-height: 48px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
   color: #d6d6d6;
+  margin-bottom: 16px;
 }
 
 .title_content h3 {
   font-style: normal;
   font-weight: 700;
   font-size: 54px;
-  line-height: 64px;
+  line-height: 1.5;
   letter-spacing: -0.02em;
   color: #fafafa;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

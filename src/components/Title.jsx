@@ -1,5 +1,7 @@
-import Logo from "../assets/TitleLogo.svg";
-import "../index.css";
+/* eslint-disable react/prop-types */
+import React from 'react'
+import Logo from '../assets/TitleLogo.svg'
+import '../index.css'
 
 const Title = ({ title, subtitle }) => {
   return (
@@ -10,7 +12,7 @@ const Title = ({ title, subtitle }) => {
       </div>
       <img src={Logo} alt="" />
     </div>
-  );
-};
+  )
+}
 
-export default Title;
+export default Title

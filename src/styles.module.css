@@ -1,19 +1,30 @@
 .App {
-  max-width: 1440px;
   margin: 0px auto;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Hero Styles */
 .hero {
   width: 100%;
-  max-height: 960px;
+  min-height: 960px;
   background: url(./assets/Bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding: 64px 80px 146px 80px;
+}
+
+.hero .wrapper {
+  position: relative;
+  justify-content: flex-end;
+  right: 0;
 }
 
 /* Navbar Styles */
@@ -28,6 +39,7 @@
 }
 
 /* Rotating Element */
+
 .rotate {
   animation: rotation 20s infinite linear;
 }
@@ -43,16 +55,26 @@
 
 /* Hero Content */
 .hero_content {
-  margin-top: 400px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
+  position: relative;
 }
+
+.rotate_container {
+  position: absolute;
+  right: 0;
+  bottom: 80px;
+}
+
 .content {
+  width: calc(100% - 108px);
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-right: 20px;
 }
+
 .content h1 {
   font-family: 'Poppins';
   font-style: normal;
@@ -86,30 +108,55 @@
 .services_section,
 .contact_section {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   padding: 80px 120px;
 }
 
 .about_us_section {
   background: #12202d;
+  position: relative;
+}
+
+.about_us_section .wrapper {
+  z-index: 3;
+}
+
+.video__bg_overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(18, 32, 45, 0.9);
+}
+
+.about_us_section video,
+.partners_section video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
 
 .about_content_section {
   margin-top: 80px;
-  display: grid;
-  place-items: center;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 48px;
 }
 
 .about_content_section img {
   width: 100%;
+  min-width: 587px;
 }
 
 .about_content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .about_content p {
@@ -129,7 +176,7 @@
 /* Services Section Styles */
 .services_section {
   background-image: url('./assets/images/Our services bg.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -145,10 +192,15 @@
 .partners_section {
   background: #23262f;
   display: flex;
-  flex-direction: column;
-  gap: 40px;
+  justify-content: center;
   padding: 64px 120px;
+  position: relative;
 }
+
+.partners_section .wrapper {
+  z-index: 3;
+}
+
 .partners_section h6 {
   font-style: normal;
   font-weight: 700;
@@ -158,7 +210,9 @@
   letter-spacing: -0.02em;
   color: #fafafa;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 40px;
 }
+
 .partners_content {
   display: flex;
   justify-content: space-evenly;
@@ -209,7 +263,7 @@
 }
 .social p,
 .email p {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -227,6 +281,13 @@
   display: flex;
   gap: 15px;
 }
+
+.social_links a,
+.social_links a svg {
+  width: 24px;
+  height: 24px;
+}
+
 .contact_form {
   display: flex;
   flex-direction: column;
@@ -249,7 +310,7 @@
 }
 .contact_form textarea::placeholder,
 .contact_form input::placeholder {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -258,7 +319,7 @@
 }
 .contact_form button {
   width: 100%;
-  font-family: "DM Sans";
+  font-family: 'DM Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -274,7 +335,7 @@
   flex-direction: column;
 }
 .form_group label {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
@@ -288,10 +349,29 @@
 }
 
 /* Responsive Styles 1124px */
+@media screen and (max-width: 1400px) {
+  .about_content_section img {
+    min-width: 480px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .about_content_section {
+    flex-direction: column;
+  }
+}
+
+/* Responsive Styles 1124px */
 @media screen and (max-width: 1124px) {
   .hero {
     padding: 64px 60px 100px 60px;
   }
+
+  .partners_section {
+    padding: 60px 24px;
+  }
+
   .content h2 {
     font-size: 54px;
   }
@@ -300,16 +380,11 @@
   .contact_section {
     padding: 80px 60px;
   }
-  .about_content_section {
-    display: grid;
-    grid-template-columns: 50% 45%;
+
+  .about_content_section img {
+    align-self: center;
   }
-  .about_content {
-    height: 100%;
-  }
-  .about_content p {
-    font-size: 22px;
-  }
+
   .contact_content {
     padding: 40px;
     gap: 40px;
@@ -318,11 +393,34 @@
 
 /* Responsive Styles 850px */
 @media screen and (max-width: 850px) {
-  .content h2 {
-    font-size: 44px;
+  .content {
+    width: 100%;
   }
+
+  .content h2 {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+
   .about_content p {
-    font-size: 18px;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .about_content p:first-child {
+    margin-bottom: 60px;
+  }
+
+  .rotate_container {
+    bottom: -20px;
+  }
+
+  .contact_content {
+    flex-wrap: wrap;
+    column-gap: 34.45px;
+    margin-top: 64px;
+    row-gap: 40px;
+    padding: 24px 20px;
   }
   .contact_content {
     flex-wrap: wrap;
@@ -330,16 +428,49 @@
 }
 
 /* Responsive Styles 480px */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 680px) {
   .hero {
+    padding: 64px 32px 100px 32px;
+  }
+
+  .services_section,
+  .about_us_section,
+  .contact_section {
+    padding: 80px 32px 80px 32px;
+  }
+
+  .about_content_section img {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .rotate_container {
+    bottom: -10px;
+  }
+
+  .rotate_container svg {
+    width: 71px;
+    height: 71px;
+  }
+}
+/* Responsive Styles 480px */
+@media screen and (max-width: 480px) {
+  .hero,
+  .partners_section {
     padding: 27px 25px 80px 24px;
   }
+
   .hero_content {
     margin-top: 446.36px;
     display: flex;
     flex-direction: column;
     align-items: end;
   }
+
+  .content {
+    margin-right: 0px;
+  }
+
   .content h1 {
     font-size: 18px;
     line-height: 27px;
@@ -354,9 +485,7 @@
     font-size: 16px;
     line-height: 24px;
   }
-  .rotate_container {
-    margin-top: -70px;
-  }
+
   .about_us_section,
   .services_section,
   .contact_section {
@@ -385,37 +514,37 @@
     width: 48px;
     height: 48px;
   }
+
   .partner a {
     font-size: 16px;
     line-height: 21px;
   }
+
   .partner a .partner_icon {
     width: 13.33px;
     height: 13.33px;
     margin-left: 5px;
   }
-  .contact_content {
-    flex-wrap: wrap;
-    column-gap: 34.45px;
-    margin-top: 64px;
-    row-gap: 40px;
-    padding: 24px 20px;
-  }
+
   .email {
     order: 1;
   }
+
   .social {
     order: 2;
   }
+
   .email p,
   .social p {
     font-size: 14px;
     line-height: 21px;
   }
+
   .iconlinks {
     width: 20px;
     height: 20px;
   }
+
   .contact_form {
     order: 3;
   }
