@@ -1,3 +1,4 @@
+import React from 'react'
 import Button from './components/Button'
 import Rotate from './components/Rotate'
 import Title from './components/Title'

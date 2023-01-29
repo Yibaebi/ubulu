@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.css'
 import {
   advisoryAndConsultingImage,
@@ -37,7 +37,7 @@ const ServicesSection = () => {
         isActive: false,
         description: [
           'We develop, manage & monitor digital for development programs, improve healthcare, food, agriculture, education and general wellbeing. We value using technology for development, providing digital skills and resources to drive growth and improve lives.',
-          "We understand that in today's digital age, access to technology and digital skills is crucial for economic and social development. Our programs aim to empower individuals, communities and organizations by providing them with digital skills, resources and opportunities to improve their lives and drive growth",
+          "We understand that in today's digital age, access to technology and digital skills is crucial for economic and social development. Our programs aim to empower individuals, communities and organizations by providing them with digital skills, resources and opportunities to improve their lives and drive growth.",
         ],
       },
       {
@@ -45,8 +45,8 @@ const ServicesSection = () => {
         image: advisoryAndConsultingImage,
         isActive: false,
         description: [
-          'We provide contemporary advisory and consulting services to individuals, startups & coperate organizations',
-          'We provide expert guidance and support to help navigate the challenges of innovation. From strategy development to implementation, these services offer the expertise and resources needed to identify opportunities, overcome obstacles and achieve business objectives. With the help of an advisory or consulting firm, organizations can take the necessary steps to stay competitive and innovate effectively',
+          'We provide contemporary advisory and consulting services to individuals, startups & coperate organizations.',
+          'We provide expert guidance and support to help navigate the challenges of innovation. From strategy development to implementation, these services offer the expertise and resources needed to identify opportunities, overcome obstacles and achieve business objectives. With the help of an advisory or consulting firm, organizations can take the necessary steps to stay competitive and innovate effectively.',
         ],
       },
     ],
@@ -83,6 +83,12 @@ const ServicesSection = () => {
           })}
         </ul>
       </div>
+      <article className={styles.service_info__content}>
+        <h2>{serviceInDisplay.title}</h2>
+        {serviceInDisplay.description.map(desc => (
+          <p key={desc}>{desc}</p>
+        ))}
+      </article>
     </section>
   )
 }
