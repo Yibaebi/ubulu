@@ -77,13 +77,13 @@ const LandingNav = () => {
           </ul>
 
           <div className={styles.social_links__container}>
-            <a href="#">
+            <a href="https://twitter.com/UbuluAfrica" target="_blank" rel="noreferrer">
               <Twitter className={styles.socials} />
             </a>
-            <a href="">
+            <a href="https://www.linkedin.com/company/ubulu-africa" target="_blank" rel="noreferrer">
               <Linkedin className={styles.socials} />
             </a>
-            <a href="">
+            <a href="https://www.instagram.com/Ubulu_africa/" target="_blank" rel="noreferrer">
               <Instagram className={styles.socials} />
             </a>
           </div>
