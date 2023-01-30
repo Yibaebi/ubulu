@@ -1,5 +1,6 @@
 .App {
   margin: 0px auto;
+  scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -13,12 +14,13 @@
 .hero {
   width: 100%;
   min-height: 960px;
-  background: url(./assets/Bg.png);
+  background-color: #111316;
+  background-image: url('https://res.cloudinary.com/dscuc72dw/image/upload/q_auto:good/f_auto/v1675045274/ubulu_hero.png');
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
-  padding: 64px 80px 146px 80px;
+  padding: 64px 120px 146px 120px;
 }
 
 .hero .wrapper {
@@ -217,13 +219,17 @@
   display: flex;
   justify-content: space-evenly;
 }
+
 .partner {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
 }
+
 .partner a {
+  display: flex;
+  align-items: center;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -360,6 +366,11 @@
   .about_content_section {
     flex-direction: column;
   }
+
+  .about_content_section img {
+    max-width: 600px;
+    align-self: center;
+  }
 }
 
 /* Responsive Styles 1124px */
@@ -382,7 +393,7 @@
   }
 
   .about_content_section img {
-    align-self: center;
+    max-width: 587px;
   }
 
   .contact_content {

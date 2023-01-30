@@ -16,13 +16,16 @@ import styles from './styles.module.css'
 
 import Button from './components/Button'
 import { ServicesSection } from './components/ServicesSection'
-// import { aboutUsVideo } from './assets'
+import { Footer } from './components/Footer'
+import { ScrollButton } from './components/ScrolltoTopBtn'
+import { LandingNav } from './components/Nav'
 
 function App() {
   return (
     <div className={styles.App}>
+      <LandingNav />
       {/* Hero Section */}
-      <div className={styles.hero}>
+      <div className={styles.hero} id="home">
         <div className={styles.wrapper}>
           <div className={styles.hero_content}>
             <div className={styles.content}>
@@ -39,13 +42,14 @@ function App() {
       </div>
 
       {/* About Us Section */}
-      <div className={styles.about_us_section}>
+      <div className={styles.about_us_section} id="about-us">
         <div className={styles.video__bg_overlay}></div>
         <video
           className={styles}
           src="https://res.cloudinary.com/dscuc72dw/video/upload/q_auto:good/f_auto/v1675027936/About_us_bg_video_xzcoy7.mp4"
           autoPlay
           loop
+          muted
         ></video>
         <div className={styles.wrapper}>
           <Title title="About Us" subtitle="An Innovation Management Group" />
@@ -66,7 +70,7 @@ function App() {
       </div>
 
       {/* Services Section */}
-      <div className={styles.services_section}>
+      <div className={styles.services_section} id="our-services">
         <div className={styles.wrapper}>
           <Title title="Our Services" subtitle="Building Blocks for Innovation" />
           <ServicesSection />
@@ -81,6 +85,7 @@ function App() {
           src="https://res.cloudinary.com/dscuc72dw/video/upload/q_auto:good/f_auto/v1675027936/About_us_bg_video_xzcoy7.mp4"
           autoPlay
           loop
+          muted
         ></video>
         <div className={styles.wrapper}>
           <h6>Our Partners</h6>
@@ -108,7 +113,7 @@ function App() {
       </div>
 
       {/* Contact Section */}
-      <div className={styles.contact_section}>
+      <div className={styles.contact_section} id="contact-us">
         <div className={styles.wrapper}>
           <Title title="Let’s connect" subtitle="Contact us" />
           <div className={styles.contact_content}>
