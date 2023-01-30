@@ -35,8 +35,11 @@ const LandingNav = () => {
       if (ignore) {
         return false
       }
+
       if (link.toLowerCase().includes('home') && !hash) {
         return true
+      } else if (!link.toLowerCase().includes('home') && !hash) {
+        return false
       } else {
         return createLinkHref(link).includes(hash)
       }

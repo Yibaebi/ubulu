@@ -28,8 +28,8 @@ const ServicesSection = () => {
         image: incubatorAndAcceleratorImage,
         isActive: false,
         description: [
-          'We organize and facilitate incubator & accelerator programs for startups and coperate organizations.',
-          'Incubator and accelerator programs provide startups with mentorship, resources, and networking opportunities to help them grow and succeed. Through these programs we offer a wide range of support, from office space and funding to industry-specific expertise and access to potential investors. We help Individuals, startups & coperate business to develop and validate their business models, and to scale quickly in a low-risk environment.',
+          'We organize and facilitate incubator & accelerator programs for startups and corporate organizations.',
+          'Incubator and accelerator programs provide startups with mentorship, resources, and networking opportunities to help them grow and succeed. Through these programs we offer a wide range of support, from office space and funding to industry-specific expertise and access to potential investors. We help Individuals, startups & corporate business to develop and validate their business models, and to scale quickly in a low-risk environment.',
         ],
       },
       {
@@ -46,7 +46,7 @@ const ServicesSection = () => {
         image: advisoryAndConsultingImage,
         isActive: false,
         description: [
-          'We provide contemporary advisory and consulting services to individuals, startups & coperate organizations.',
+          'We provide contemporary advisory and consulting services to individuals, startups & corporate organizations.',
           'We provide expert guidance and support to help navigate the challenges of innovation. From strategy development to implementation, these services offer the expertise and resources needed to identify opportunities, overcome obstacles and achieve business objectives. With the help of an advisory or consulting firm, organizations can take the necessary steps to stay competitive and innovate effectively.',
         ],
       },

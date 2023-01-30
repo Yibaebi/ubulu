@@ -466,6 +466,10 @@
 }
 /* Responsive Styles 480px */
 @media screen and (max-width: 480px) {
+  .hero {
+    min-height: 812px;
+  }
+
   .hero,
   .partners_section {
     padding: 27px 25px 80px 24px;
