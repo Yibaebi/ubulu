@@ -78,7 +78,7 @@ function App() {
       {/* Services Section */}
       <div className={styles.services_section} id="our-services">
         <div className={styles.wrapper}>
-          <Title title="Our Services" subtitle="Building Blocks for Innovation" />
+          <Title title="Our Services" subtitle="Ubulu Africa Innovation Building Blocks" />
           <ServicesSection />
         </div>
       </div>
@@ -99,13 +99,13 @@ function App() {
             <div className={styles.partner}>
               <img src={Partner1} alt="Tech Quest" />
               <a href="https://www.tqstem.org/home/">
-                Tech Quest <ExternalLink className={styles.partner_icon} />
+                TechQuest <ExternalLink className={styles.partner_icon} />
               </a>
             </div>
             <div className={styles.partner}>
               <img src={Partner2} alt="Tech Circle" />
               <a href="https://www.techcircle.ng/">
-                Techcircle <ExternalLink className={styles.partner_icon} />
+                TechCircle <ExternalLink className={styles.partner_icon} />
               </a>
             </div>
             <div className={styles.partner}>

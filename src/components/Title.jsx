@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import Logo from '../assets/TitleLogo.svg'
 import '../index.css'
 
 const Title = ({ title, subtitle }) => {
@@ -10,7 +9,6 @@ const Title = ({ title, subtitle }) => {
         <h2>{title}</h2>
         <h3> {subtitle} </h3>
       </div>
-      <img src={Logo} alt="" />
     </div>
   )
 }
