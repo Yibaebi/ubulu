@@ -1,18 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../index.css'
 // import { FaAngleDoubleUp } from "react-icons/fa";
 import { ReactComponent as Icon } from '../assets/Footer-Icon.svg'
 const ScrollButton = () => {
   const [visible, setVisible] = useState(false)
-
-  const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop
-    if (scrolled > 300) {
-      setVisible(true)
-    } else if (scrolled <= 300) {
-      setVisible(false)
-    }
-  }
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -23,7 +14,19 @@ const ScrollButton = () => {
     })
   }
 
-  window.addEventListener('scroll', toggleVisible)
+  useEffect(() => {
+    const toggleVisible = () => {
+      const scrolled = document.documentElement.scrollTop
+      if (scrolled > 300) {
+        setVisible(true)
+      } else if (scrolled <= 300) {
+        setVisible(false)
+      }
+    }
+
+    window.addEventListener('scroll', toggleVisible)
+    return () => window.removeEventListener('scroll', toggleVisible)
+  }, [])
 
   return (
     <div className="scrollbtn">

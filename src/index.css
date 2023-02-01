@@ -3,6 +3,7 @@ html {
 }
 
 :root {
+  --ulu-color-white: #ffffff;
   --ulu-color-primary: #fafafa;
   --ulu-color-primary-shade-2: #fafafa;
   --ulu-color-primary-shade-5: #a1a1a1;

@@ -9,14 +9,9 @@ import { ReactComponent as Linkedin } from '../../assets/LinkedIn-Icon.svg'
 import { ReactComponent as Instagram } from '../../assets/Instagram-Icon.svg'
 
 const LandingNav = () => {
-  const [hash, setHash] = useState(() => window.location.hash)
-
-  useEffect(() => {
-    window.addEventListener('hashchange', () => setHash(window.location.hash))
-    return () => window.removeEventListener('hashchange', () => setHash(window.location.hash))
-  }, [])
-
-  const createLinkHref = useCallback(link => `#${link.toLowerCase().split(' ').join('-')}`, [])
+  const [activeLink, setActiveLink] = useState(window.location.hash || 'home')
+  const [showWhiteNav, setShowWhiteNav] = useState(false)
+  const createHashLink = useCallback(link => `${link.toLowerCase().split(' ').join('-')}`, [])
   const [mobileIsLaunched, setMobileIsLaunched] = useState(false)
 
   const { width: windowWidth } = useWindowSize()
@@ -31,27 +26,39 @@ const LandingNav = () => {
   )
 
   const isActiveLink = useCallback(
-    (link, idx, ignore) => {
+    (link, ignore) => {
       if (ignore) {
         return false
       }
 
-      if (link.toLowerCase().includes('home') && !hash) {
-        return true
-      } else if (!link.toLowerCase().includes('home') && !hash) {
-        return false
-      } else {
-        return createLinkHref(link).includes(hash)
-      }
+      return `#${createHashLink(link)}`.includes(activeLink)
     },
-    [isMobile, createLinkHref, hash],
+    [createHashLink, activeLink],
   )
 
+  const handleLinkClick = (e, link) => {
+    e.preventDefault() // Stop Page Reloading
+    setMobileIsLaunched(false)
+
+    const hashLink = createHashLink(link)
+    setActiveLink(hashLink)
+
+    const section = document.getElementById(hashLink)
+    section && section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  useEffect(() => {
+    const toggleWhiteNav = () => setShowWhiteNav(() => document.documentElement.scrollTop > 200)
+
+    window.addEventListener('scroll', toggleWhiteNav)
+    return () => window.removeEventListener('scroll', toggleWhiteNav)
+  }, [])
+
   return (
-    <div className={`${styles.wrapper} ${isMobile ? styles.mobile : ''}`}>
+    <div className={`${styles.wrapper} ${isMobile ? styles.mobile : ''} ${showWhiteNav ? styles.white : ''}`}>
       {isMobile ? (
         <div className={styles.mobile_container}>
-          <a href="#home" className={styles.mobile_logo}>
+          <a href="#home" onClick={e => handleLinkClick(e, 'home')} className={styles.mobile_logo}>
             <img src={Logo} alt="logo" />
           </a>
           <HamburgerMenu className={styles.hamburger_menu} onClick={() => setMobileIsLaunched(state => !state)} />
@@ -60,15 +67,10 @@ const LandingNav = () => {
         <div className={styles.nav_links__container}>
           <ul className={`${styles.nav_links}  ${isMobile ? styles.mobile : ''}`}>
             {NAV_ITEMS.map((item, idx) => {
-              const isActive = isActiveLink(item, idx, idx === 0)
+              const isActive = isActiveLink(item, idx === 0)
               return (
                 <li className={`${styles.nav_link__item} ${isActive ? styles.active : ''}`} key={idx}>
-                  <a
-                    href={createLinkHref(item)}
-                    onClick={() => {
-                      setMobileIsLaunched(false)
-                    }}
-                  >
+                  <a href={`#${createHashLink(item)}`} onClick={e => handleLinkClick(e, item)}>
                     {idx === 0 ? <img src={Logo} alt="logo" /> : item}
                   </a>
                 </li>
@@ -93,16 +95,16 @@ const LandingNav = () => {
       {isMobile && mobileIsLaunched && (
         <div className={styles.mobile_nav_links__container}>
           <CloseIcon className={styles.close_icon} onClick={() => setMobileIsLaunched(state => !state)} />
-          <a href="#home" className={styles.mobile_nav_links__logo}>
+          <a href="#home" onClick={e => handleLinkClick(e, 'home')} className={styles.mobile_nav_links__logo}>
             <img src={Logo} alt="logo" />
           </a>
 
           <ul className={`${styles.mobile_nav_links}`}>
             {NAV_ITEMS.map((item, idx) => {
-              const isActive = isActiveLink(item, idx)
+              const isActive = isActiveLink(item)
               return (
                 <li className={`${styles.mobile_nav_link__item} ${isActive ? styles.active : ''}`} key={idx}>
-                  <a onClick={() => setMobileIsLaunched(false)} href={createLinkHref(item)}>
+                  <a onClick={e => handleLinkClick(e, item)} href={`#${createHashLink(item)}`}>
                     {item}
                   </a>
                 </li>

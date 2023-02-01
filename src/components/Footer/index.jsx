@@ -22,7 +22,7 @@ const Footer = () => {
         <hr />
         <div className={styles.sec_three}>
           <div className={styles.copyright}>
-            <p className={styles.copy}>Copyright © 2021 UI8 LLC. All rights reserved</p>
+            <p className={styles.copy}>Copyright © {new Date().getFullYear()} All rights reserved</p>
             <a href="#" className={styles.privacy}>
               Privacy Policy
             </a>

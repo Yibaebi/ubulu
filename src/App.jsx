@@ -11,7 +11,6 @@ import { ReactComponent as Twitter } from './assets/Twitter-Icon.svg'
 import { ReactComponent as Linkedin } from './assets/LinkedIn-Icon.svg'
 import { ReactComponent as Instagram } from './assets/Instagram-Icon.svg'
 import { ReactComponent as SendMail } from './assets/Send-Mail-Icon.svg'
-import Bulb from './assets/bulb.png'
 import styles from './styles.module.css'
 
 import Button from './components/Button'
@@ -26,6 +25,10 @@ function App() {
       <LandingNav />
       {/* Hero Section */}
       <div className={styles.hero} id="home">
+        <img
+          src="https://res.cloudinary.com/dscuc72dw/image/upload/q_auto:good/f_auto/v1675045274/ubulu_hero.png"
+          alt=""
+        />
         <div className={styles.wrapper}>
           <div className={styles.hero_content}>
             <div className={styles.content}>
@@ -64,7 +67,10 @@ function App() {
                 in Africa.
               </p>
             </div>
-            <img src={Bulb} alt="Light Bulb" />
+            <img
+              src="https://res.cloudinary.com/dscuc72dw/image/upload/q_auto:good/f_auto/v1675269930/bulb_ih18kn.png"
+              alt="Light Bulb"
+            />
           </div>
         </div>
       </div>
