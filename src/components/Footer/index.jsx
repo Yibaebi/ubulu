@@ -22,13 +22,7 @@ const Footer = () => {
         <hr />
         <div className={styles.sec_three}>
           <div className={styles.copyright}>
-            <p className={styles.copy}>Copyright © {new Date().getFullYear()} All rights reserved</p>
-            <a href="#" className={styles.privacy}>
-              Privacy Policy
-            </a>
-            <a href="#" className={styles.terms}>
-              Terms of Use
-            </a>
+            <p className={styles.copy}>© {new Date().getFullYear()} All rights reserved</p>
           </div>
           <div className={styles.social_links__container}>
             <a href="https://twitter.com/UbuluAfrica" target="_blank" rel="noreferrer">

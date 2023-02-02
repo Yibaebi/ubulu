@@ -1,7 +1,9 @@
-import "../index.css";
+/* eslint-disable react/prop-types */
+import React from 'react'
+import '../index.css'
 
-const Button = () => {
-  return <button>Contact Us</button>;
-};
+const Button = ({ title = 'Contact Us' }) => {
+  return <button>{title}</button>
+}
 
-export default Button;
+export default Button

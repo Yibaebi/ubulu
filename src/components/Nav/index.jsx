@@ -16,7 +16,7 @@ const LandingNav = () => {
 
   const { width: windowWidth } = useWindowSize()
 
-  const isMobile = useMemo(() => windowWidth < 1090, [windowWidth])
+  const isMobile = useMemo(() => windowWidth < 1124, [windowWidth])
   const NAV_ITEMS = useMemo(
     () =>
       !isMobile

@@ -4,7 +4,6 @@ import Title from './components/Title'
 import Partner1 from './assets/TechQuest.png'
 import Partner2 from './assets/Techcircle.png'
 import Partner3 from './assets/caspania.png'
-import { ReactComponent as ExternalLink } from './assets/ExternalLinkIcon.svg'
 import { ReactComponent as Link } from './assets/Link-Icon.svg'
 import { ReactComponent as Mail } from './assets/Mail-Icon.svg'
 import { ReactComponent as Twitter } from './assets/Twitter-Icon.svg'
@@ -12,14 +11,17 @@ import { ReactComponent as Linkedin } from './assets/LinkedIn-Icon.svg'
 import { ReactComponent as Instagram } from './assets/Instagram-Icon.svg'
 import { ReactComponent as SendMail } from './assets/Send-Mail-Icon.svg'
 import styles from './styles.module.css'
-
-import Button from './components/Button'
 import { ServicesSection } from './components/ServicesSection'
 import { Footer } from './components/Footer'
 import { ScrollButton } from './components/ScrolltoTopBtn'
 import { LandingNav } from './components/Nav'
 
 function App() {
+  const navigateToServiceSection = () => {
+    const section = document.getElementById('our-services')
+    section && section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <div className={styles.App}>
       <LandingNav />
@@ -34,8 +36,15 @@ function App() {
             <div className={styles.content}>
               <h1>Ubulu Africa</h1>
               <h2>Making Innovation Work</h2>
-              <p>Center of excellence for end-to-end innovation activities</p>
-              <Button />
+              <p>Centre of Excellence for end-to-end innovation activities</p>
+              <div className={styles.hero_buttons}>
+                <button className="outlined" onClick={navigateToServiceSection}>
+                  Corporate Innovation
+                </button>
+                <button className="outlined" onClick={navigateToServiceSection}>
+                  Startup Boost
+                </button>
+              </div>
             </div>
           </div>
           <div className={styles.rotate_container}>
@@ -63,8 +72,8 @@ function App() {
                 technology to achieve the Sustainable Development Goals (SDGs).
               </p>
               <p>
-                We are building a Centre of Excellence for end-to-end innovation activities required to solve problems
-                in Africa.
+                We are building a Centre of Excellence for end-to-end innovation activities required to solve social and
+                economic problems in Africa.
               </p>
             </div>
             <img
@@ -96,23 +105,17 @@ function App() {
         <div className={styles.wrapper}>
           <h6>Our Partners</h6>
           <div className={styles.partners_content}>
-            <div className={styles.partner}>
+            <div className={styles.partner} onClick={() => window.open('https://www.tqstem.org/home/', '_blank')}>
               <img src={Partner1} alt="Tech Quest" />
-              <a href="https://www.tqstem.org/home/">
-                TechQuest <ExternalLink className={styles.partner_icon} />
-              </a>
+              <a href="https://www.tqstem.org/home/">TechQuest</a>
             </div>
-            <div className={styles.partner}>
+            <div className={styles.partner} onClick={() => window.open('https://www.techcircle.ng/', '_blank')}>
               <img src={Partner2} alt="Tech Circle" />
-              <a href="https://www.techcircle.ng/">
-                TechCircle <ExternalLink className={styles.partner_icon} />
-              </a>
+              <a href="https://www.techcircle.ng/">TechCircle</a>
             </div>
-            <div className={styles.partner}>
+            <div className={styles.partner} onClick={() => window.open('https://www.caspania.com/', '_blank')}>
               <img src={Partner3} alt="Caspania" />
-              <a href="https://www.caspania.com/">
-                Caspania <ExternalLink className={styles.partner_icon} />
-              </a>
+              <a href="https://www.caspania.com/">Caspania</a>
             </div>
           </div>
         </div>

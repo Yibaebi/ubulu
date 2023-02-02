@@ -8,21 +8,25 @@
   padding: 0rem 7.5rem;
   display: flex;
   align-items: center;
-  transition: top 0.3s ease-in-out;
 }
 
 .wrapper.white {
   top: 0px;
-  background-color: var(--ulu-color-white);
+  background-color: rgba(252, 252, 253, 0.88);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: fit-content;
 }
 
 .wrapper.mobile {
+  top: 0px;
   height: unset;
-  padding: 2rem 2.5rem;
+  padding: 1.6875rem 2.5rem;
   background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(252, 252, 253, 0.88);
 }
 
 .nav_links__container {
@@ -227,5 +231,21 @@
     object-fit: cover;
     width: 56px;
     height: 56px;
+  }
+}
+
+@media screen and (max-height: 480px) {
+  .wrapper.mobile {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+
+  .mobile_logo > img {
+    width: 80x;
+    height: 80px;
+  }
+
+  .mobile_nav_links__container {
+    overflow-y: scroll;
   }
 }

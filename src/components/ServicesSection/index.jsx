@@ -28,18 +28,17 @@ const ServicesSection = () => {
         image:
           'https://res.cloudinary.com/dscuc72dw/image/upload/q_auto:good/f_auto/v1675269670/Digital_for_Development_Programs_gfspgp.png',
         description: [
-          "We develop, manage & monitor digital for development programs.",
-          "Digital for development programs are initiatives aimed at using technology and digital tools to improve social, economic and political conditions in developing countries.",
-          "We understand that in today's digital age, access to technology and digital skills is crucial for economic and social development. Our programs aim to empower individuals, communities and organizations by providing them with digital skills, resources and opportunities to improve their lives and drive growth.",
+          'We develop, manage & monitor digital for development programs.',
+          'Digital for development programs are initiatives aimed at using technology and digital tools to improve social, economic and political conditions in developing countries. Our programs aim to empower individuals, communities and organizations by providing them with digital skills, resources and opportunities to improve their lives and drive growth.',
         ],
       },
       {
-        title: 'Advisory & Consulting services',
+        title: 'Advisory & Consulting Services',
         image:
           'https://res.cloudinary.com/dscuc72dw/image/upload/q_auto:good/f_auto/v1675269673/Advisory_Consulting_services_tamvpi.png',
         description: [
-          "We provide contemporary innovation advisory and consulting services to individuals, startups & corporate organizations.",
-          "We provide expert guidance and support to help navigate the challenges of innovation. From strategy development to implementation, these services offer the expertise and resources needed to identify opportunities, overcome obstacles and achieve business objectives. With the help of Ubulu Africa, organizations can take the necessary steps to stay competitive and innovate effectively.",
+          'We provide contemporary innovation advisory and consulting services to individuals, startups & corporate organizations.',
+          'We provide expert guidance and support to help navigate the challenges of innovation. From strategy development to implementation, these services offer the expertise and resources needed to identify opportunities, overcome obstacles and achieve business objectives. With the help of Ubulu Africa, organizations can take the necessary steps to stay competitive and innovate effectively.',
         ],
       },
     ],
