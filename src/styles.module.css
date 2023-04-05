@@ -81,7 +81,13 @@
 
 .hero_buttons {
   display: flex;
+  flex-wrap: wrap;
+  padding-top: 40px;
   gap: 16px;
+}
+
+.hero_buttons button {
+  margin-top: 0px;
 }
 
 .content {
@@ -492,14 +498,11 @@
     flex-direction: column;
   }
 
-  .hero_buttons button:last-of-type {
-    margin-top: 0px;
-  }
-
   .rotate_container {
     bottom: 20px;
   }
 }
+
 /* Responsive Styles 480px */
 @media screen and (max-width: 480px) {
   .hero > img {
@@ -524,6 +527,10 @@
     display: flex;
     flex-direction: column;
     align-items: end;
+  }
+
+  .rotate_container {
+    bottom: -120px;
   }
 
   .content {

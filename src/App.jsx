@@ -39,10 +39,13 @@ function App() {
               <p>Centre of Excellence for end-to-end innovation activities</p>
               <div className={styles.hero_buttons}>
                 <button className="outlined" onClick={navigateToServiceSection}>
+                  Startup Boost
+                </button>
+                <button className="outlined" onClick={navigateToServiceSection}>
                   Corporate Innovation
                 </button>
                 <button className="outlined" onClick={navigateToServiceSection}>
-                  Startup Boost
+                  University-Industry Collaboration
                 </button>
               </div>
             </div>
